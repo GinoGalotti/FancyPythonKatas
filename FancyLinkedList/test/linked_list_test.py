@@ -50,6 +50,16 @@ class LinkedListTest(unittest.TestCase):
         assert test_list.last_element.is_number(4)
         assert str(test_list) == "[1, 3, 4]"
 
+    def test_add_negative(self):
+        test_list = LinkedList()
+        test_list.add_sorted(4)
+        test_list.add_sorted(3)
+
+        test_list.add_sorted(-2)
+        assert test_list.first_element.is_number(-2)
+        assert test_list.last_element.is_number(4)
+        assert str(test_list) == "[-2, 3, 4]"
+
     def test_add_maximum(self):
         test_list = LinkedList()
         test_list.add_sorted(0)
