@@ -23,7 +23,7 @@ class LinkedListTest(unittest.TestCase):
 
     def test_init_denominator_zero(self):
         with self.assertRaises(DoNotDivideByZeroDude):
-            Fraction(2,0)
+            Fraction(2, 0)
 
     def test_fraction_init_with_string(self):
         with self.assertRaises(NumberNeedsToBeIntError):
@@ -35,7 +35,7 @@ class LinkedListTest(unittest.TestCase):
 
     # This is extra!
     def test_fraction_canonize_when_needed(self):
-        fraction = Fraction (20, 30)
+        fraction = Fraction(20, 30)
         fraction.canonize()
 
         assert fraction.numerator == 2
@@ -43,12 +43,20 @@ class LinkedListTest(unittest.TestCase):
         assert str(fraction) == "2 / 3"
 
     def test_fraction_canonize_when_not_needed(self):
-        fraction = Fraction (20, 7)
+        fraction = Fraction(20, 7)
         fraction.canonize()
 
         assert fraction.numerator == 20
         assert fraction.denominator == 7
         assert str(fraction) == "20 / 7"
+
+    def test_fraction_reciprocal(self):
+        fraction = Fraction(3, 4)
+        fraction.reciprocal()
+
+        assert fraction.numerator == 4
+        assert fraction.denominator == 3
+        assert str(fraction) == "4 / 3"
 
 
 if __name__ == '__main__':

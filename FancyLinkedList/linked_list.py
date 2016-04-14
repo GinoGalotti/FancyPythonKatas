@@ -77,7 +77,6 @@ class LinkedList():
 
         return (string + closer)
 
-
     # As specified in Java LinkedList, it won' return an error if the element is not present
     # Return True when something is deleted
     def remove_element(self, number):
@@ -106,6 +105,7 @@ class LinkedList():
 
     def is_empty(self):
         return not self.first_element and not self.last_element
+
 
 class Element():
     def __init__(self, number=0, next=None):

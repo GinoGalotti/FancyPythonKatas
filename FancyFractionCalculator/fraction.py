@@ -1,7 +1,8 @@
 from FancyFractionCalculator.exceptions import NumberNeedsToBeIntError, DoNotDivideByZeroDude
 
-#C'mon guys, I'm not implementing a GCD on my own!
+# C'mon guys, I'm not implementing a GCD on my own!
 from fractions import gcd
+
 
 # This is a faith jump, as there's nothing in the specification saying that fractions should be integer only, but for me
 # it makes sense to represent them as integer. But converting float to numbers is OVERKILLING this
@@ -28,3 +29,10 @@ class Fraction:
         divisor = gcd(self.numerator, self.denominator)
         self.numerator = self.numerator / divisor
         self.denominator = self.denominator / divisor
+
+    def reciprocal(self):
+        if self.numerator == 0:
+            raise DoNotDivideByZeroDude("Can't calculate the reciprocal with numerator 0")
+        numerator = self.numerator
+        self.numerator = self.denominator
+        self.denominator = numerator

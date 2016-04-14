@@ -130,7 +130,6 @@ class LinkedListTest(unittest.TestCase):
         assert test_list.remove_element(3)
         assert str(test_list) == "[2, 4]"
 
-
     def test_add_after_removing(self):
         test_list = LinkedList()
         test_list.add_sorted(4)
